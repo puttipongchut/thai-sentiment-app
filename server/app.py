@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from transformers import pipeline
+import os
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": ["https://thai-sentiment-app.vercel.app/"]}})
@@ -30,4 +31,5 @@ def analyze_sentiment():
         return jsonify({"error": f"Analysis failed: {e}"}), 500
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    port = os.environ.get("PORT", 4000)
+    app.run(host='0.0.0.0', port=port)
