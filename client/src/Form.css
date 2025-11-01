@@ -40,10 +40,10 @@ button:hover {
 }
 
 .result-container {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   border-radius: 8px;
   padding: 1rem;
-  text-align: left;
+  text-align: center;
 }
 
 .result-container p {

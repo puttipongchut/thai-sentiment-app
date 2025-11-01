@@ -24,6 +24,12 @@ function Form() {
     }
   }
 
+  const printResult = (label: String): String => {
+    if (label === 'pos') return '😀';
+    else if (label === 'neg') return '😟';
+    else return '😐';
+  }
+
   return (
     <div className="card">
         <p className='title'>Thai text sentiment analysis 🇹🇭</p>
@@ -36,9 +42,9 @@ function Form() {
 
         { result && (
             <div className='result-container'>
-                <p>Result</p>
-                <p>Label: {result?.label}</p>
-                <p>Score: {result?.score}</p>
+                <p className='title'>Result</p>
+                <p>Feeling: {printResult(result?.label)}</p>
+                <p>Score: {result?.score.toFixed(3)}</p>
             </div>
         )}
     </div>
