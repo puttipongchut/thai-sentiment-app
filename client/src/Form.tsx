@@ -1,11 +1,10 @@
 import { useState, type FormEvent } from 'react';
 import './Form.css';
-import axios, { type AxiosResponse } from 'axios';
+import axios from 'axios';
 
 function Form() {
   const [sentence, setSentence] = useState("");
   const [result, setResult] = useState<{ label: string; score: number } | null>(null);
-  const [showResult, setShowResult] = useState(false);
 
   const handleSubmitForm = async (e: FormEvent) => {
     e.preventDefault();
