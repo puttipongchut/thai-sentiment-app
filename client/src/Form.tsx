@@ -16,7 +16,7 @@ function Form() {
 
     try {
         const body = { text: sentence };
-        const response = await axios.post("http://localhost:5000/api/analyze", body);
+        const response = await axios.post("https://thai-sentiment-app-backend.onrender.com/api/analyze", body);
 
         setResult(response.data);
     } catch (err) {
