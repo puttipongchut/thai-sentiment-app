@@ -3,7 +3,7 @@ from flask_cors import CORS
 from transformers import pipeline
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": ["https://thai-sentiment-app.vercel.app/"]}})
 
 try:
     pipe = pipeline("text-classification", model="SandboxBhh/sentiment-thai-text-model")
